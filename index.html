@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validated Login Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <h1 class="label">User Login</h1>
+        <form class="login_form" action="www.google.com" method="post" name="form" onsubmit="return validated()">
+            <div class="font">Email or Phone</div>
+            <input type="text" name="email">
+            <div id="email_error">Please fill up your Email or Phone</div>
+            <div class="font font2">Password</div>
+            <input type="password" name="password" id="id_password">
+            <i class="far fa-eye" id="togglePassword" style="margin-left: -35px;margin-bottom: 20px; cursor: pointer;"></i>
+            <div id="pass_error">Please fill up your Password</div>
+            <button type="submit" class="button">Login</button>
+        </form>
+    </div>  
+    <script>
+        
+var email = document.forms['form']['email'];
+var password = document.forms['form']['password'];
+
+const togglePassword = document.querySelector('#togglePassword');
+  const password1 = document.querySelector('#id_password');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password1.getAttribute('type') === 'password' ? 'text' : 'password';
+    password1.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+var email_error = document.getElementById('email_error');
+var pass_error = document.getElementById('pass_error');
+
+email.addEventListener('textInput', email_Verify);
+password.addEventListener('textInput', pass_Verify);
+
+function ValidateEmail() 
+{
+    var str = this.email.value;
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(str))
+  {
+    return true;
+  }else
+    return false;
+}
+
+function validated(){
+    if ( !ValidateEmail()) {
+        email.style.border = "2px solid red";
+        email_error.style.display = "block";
+        email.focus();
+        return false;
+    }
+    if (password.value.length < 6) {
+        password.style.border = "1px solid red";
+        pass_error.style.display = "block";
+        password.focus();
+        return false;
+    }
+
+}
+function email_Verify(){
+    if (!ValidateEmail()) {
+        email.style.border = "2px solid silver";
+        email_error.style.display = "none";
+        return true;
+    }
+}
+function pass_Verify(){
+    if (password.value.length >= 7) {
+        password.style.border = "1px solid silver";
+        pass_error.style.display = "none";
+        return true;
+    }
+}
+
+
+    </script>
+</body>
+</html>

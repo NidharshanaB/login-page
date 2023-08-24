@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-image: url("https://wallpaperaccess.com/full/4893666.jpg");
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-family: sans-serif;
+}
+.container{
+    position: relative;
+    margin-top: 100px;
+    width: 450px;
+    height: auto;
+    background:#dedede;
+    border-radius: 14px;
+    opacity: .8;
+}
+.container:hover{
+    background: #e0cfcd;
+    border-radius: 20px;
+    transition-property: all;
+    transition-duration: 1s;
+}
+.label{
+    padding: 20px 130px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff0000;
+}
+.login_form{
+    padding: 20px 40px;
+}
+.login_form .font{
+    font-size: 25px;
+    color: #130f40;
+    margin: 15px 0;
+    font-weight: 560;
+    text-align: center;
+    margin-top: 19px;
+    margin-bottom: 20px;
+}
+.login_form input{
+    background: linear-gradient(21deg, #ffffff, #ffffff);
+    height: 40px;
+    width: 350px;
+    padding: 0 5px;
+    font-size: 21px;
+    outline: none;
+    border-radius: 12px;
+    border: none;
+    border: 0.12px solid rgb(238, 235, 235);
+    box-shadow: inset 0 0 0 3px #fff,
+            0 0 0 4px #fff,
+            3px -3px 30px #31f1c8, 
+            -3px 3px 30px #64c9ff;
+}
+.login_form input:hover{
+    background: #dafff3;
+    border-radius: 14px;
+}
+.login_form .font2{
+    margin-top: 30px;
+}
+.login_form .button{
+    margin: 45px 0 30px 0;
+    height: 45px;
+    width: 365px;
+    font-size: 20px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: #2431c2;
+    border-radius: 13px;
+    border: 1px solid #435af1;
+    transition: .5s;
+}
+.login_form button:hover{
+    background: #5b23c2;
+    border-radius: 22px;
+}
+.login_form #email_error,
+.login_form #pass_error{
+    margin-top: 10px;
+    width: 345px;
+    font-size: 18px;
+    color: #C62828;
+    background: rgba(255,0,0,0.1);
+    text-align: center;
+    padding: 5px 8px;
+    border-radius: 3px;
+    border: 1px solid #EF9A9A;
+    display: none;
+    transition-duration: 1s;
+}
+input[type='password'] {
+    font-family: Verdana;
+    letter-spacing: 0.12em;
+}
